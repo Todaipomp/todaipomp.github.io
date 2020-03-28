@@ -10,7 +10,7 @@ font-family: 'M PLUS Rounded 1c', sans-serif;
 .accbox {
     margin: 2em 0;
     padding: 0;
-    max-width: 400px;/*最大幅*/
+    max-width: 1000px;/*最大幅*/
 }
 
 /*ラベル*/
