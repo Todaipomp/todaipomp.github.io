@@ -5,3 +5,23 @@ font-family: 'Luckiest Guy', cursive;
 .本文 {
 font-family: 'M PLUS Rounded 1c', sans-serif;
 }
+
+.ア ul {
+  border: solid 2px #ffb03f;
+  padding: 0.5em 1em 0.5em 2.3em;
+  position: relative;
+}
+
+.ア ul li {
+  line-height: 1.5;
+  padding: 0.5em 0;
+  list-style-type: none!important;/*ポチ消す*/
+}
+
+.ア ul li:before {
+  font-family: "Font Awesome 5 Free";
+  content: "\f00c";
+  position: absolute;
+  left : 1em; /*左端からのアイコンまで*/
+  color: #ffb03f; /*アイコン色*/
+}
