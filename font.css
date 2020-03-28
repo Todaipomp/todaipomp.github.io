@@ -18,16 +18,16 @@ font-family: 'M PLUS Rounded 1c', sans-serif;
     display: block;
     margin: 1.5px 0;
     padding : 11px 12px;
-    color :#f7a24d;
+    color :#000000;
     font-weight: bold;
-    background :#a4cbf3;
+    background :#f7a24d;
     cursor :pointer;
     transition: all 0.5s;
 }
 
 /*ラベルホバー時*/
 .accbox label:hover {
-    background :#85baef;
+    background :f7a24d;
 }
 
 /*チェックは隠す*/
@@ -48,6 +48,6 @@ font-family: 'M PLUS Rounded 1c', sans-serif;
 .cssacc:checked + .accshow {
     height: auto;
     padding: 5px;
-    background: #eaeaea;
+    background: f7a24d;
     opacity: 1;
 }
