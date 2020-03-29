@@ -48,13 +48,7 @@ font-family: 'M PLUS Rounded 1c', sans-serif;
 
 
 
-section {
-  width: 100%;
-  height: 100vh;
-  position: relative;
-  overflow: hidden;
-}
- 
+
 video {
   position: absolute;
   top: 0;
