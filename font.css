@@ -49,15 +49,7 @@ font-family: 'M PLUS Rounded 1c', sans-serif;
 .video-wrap {
   position: relative;
 }
-p {
-  font-family: serif;          
-  color: #fff;
-  font-size: 100%;
-  position: absolute;
-  left: 30%;
-  top: 200px;
-  z-index: 1;
-}
+
 
 /* ----- 背景用の動画ファイル ----- */
 #bg-video{
