@@ -57,7 +57,7 @@ video {
   height: auto;
   min-width: 100%;
   min-height: 100%;
-  background: url('../images/bg.png') no-repeat;
+  background: url('test.mp4') no-repeat;
   background-size: cover;
   z-index: -1;
 }
