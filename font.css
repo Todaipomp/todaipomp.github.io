@@ -44,3 +44,17 @@ font-family: 'M PLUS Rounded 1c', sans-serif;
   .br-pc { display:none; }
   .br-sp { display:block; }
 }
+
+
+.video-wrap {
+  position: relative;
+}
+p {
+  font-family: serif;          
+  color: #fff;
+  font-size: 400%;
+  position: absolute;
+  left: 30%;
+  top: 200px;
+  z-index: 1;
+}
