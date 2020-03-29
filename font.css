@@ -26,7 +26,7 @@ font-family: 'M PLUS Rounded 1c', sans-serif;
     transition: .5s;
     visibility: hidden;
 }
-.acd-check:checked + .acd-label + .acd-content +{
+.acd-check:checked + .acd-label + .acd-content{
     height: 180px;
     opacity: 1;
     padding: 10px;
