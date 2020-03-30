@@ -82,7 +82,6 @@ font-family: 'M PLUS Rounded 1c', sans-serif;
 
 
 .ア img {
-  width: 100%;
-  height: 100%;
-　height: auto;
+  width: auto;
+  height: 400px;
 }
