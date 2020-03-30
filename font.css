@@ -52,3 +52,30 @@ img {
   height: 800px;
   object-fit: cover;
 }
+
+
+@charset "UTF-8";
+ 
+.animal {
+	max-width: 1200px;
+	width: 100%;
+}
+.animal img {
+	width: 100%;
+}
+ 
+ 
+.pcview {
+}
+.spview {
+	display: none;
+}
+ 
+@media screen and (max-width: 979px) {
+	.pcview {
+		display: none;
+	}
+	.spview {
+		display: block;
+	}
+}
