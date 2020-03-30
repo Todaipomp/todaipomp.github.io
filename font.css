@@ -57,7 +57,6 @@ img {
 @charset "UTF-8";
  
 .animal {
-	max-width: 1200px;
 	width: 100%;
 }
 .animal img {
@@ -71,7 +70,7 @@ img {
 	display: none;
 }
  
-@media screen and (max-width: 979px) {
+@media screen and (max-width: 500px) {
 	.pcview {
 		display: none;
 	}
