@@ -48,11 +48,6 @@ font-family: 'M PLUS Rounded 1c', sans-serif;
 
 
 
-.video-wrap {
-   position: relative;
- }
-
-
 body {
   /* 画像ファイルの指定 */
   background-image: url(aki2.jpg);
