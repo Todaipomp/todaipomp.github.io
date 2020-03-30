@@ -1,8 +1,7 @@
-<style type="text/css">
-body {
-   background-image: url("haru4.jpg"); /* 画像 */
-   background-size: cover;               /* 全画面 */
-   background-attachment: fixed;         /* 固定 */
-   background-position: center center;   /* 縦横中央 */
+.header-bg {
+  background-image: url("haru4.jpg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
 }
-</style>
