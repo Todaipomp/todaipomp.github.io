@@ -422,17 +422,27 @@
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
 <script>
-// 読み込んだらフェードアウト
-$(window).load(function () {
-    // 消えるタイミングはお好みで
-    $('.loading').delay(1500).fadeOut(300);
+window.onload = function(){  // ローディング画面をフェードアウトさせる
+    $(function() {
+        $("#loading").fadeOut();
+    });
+}
+     
+$(function() {   //ロード中はコンテンツの高さをページの高さに合わせる
+    var h = $(window).height();
+    $('#contents').css('display','none');
+    $('#loader-bg ,#loader').height(h).css('display','block');
+});
+      
+$(window).load(function () {  //全ての読み込みが完了したら実行する
+    $('#loader-bg').delay(900).fadeOut(800);
+    $('#loader').delay(600).fadeOut(300);
+    $('#contents').css('display', 'block');
 });
  
-// 10秒待っても読み込みが終わらない時は強制的にローディング画面をフェードアウト
-function stopload(){
-    $('.loading').delay(1000).fadeOut(700);
-}
-setTimeout('stopload()',10000);	
+$(function(){  //10秒たったらロードを終わらせる
+    setTimeout('stopload()',10000);
+});
 </script>		
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
