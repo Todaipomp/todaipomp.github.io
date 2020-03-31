@@ -146,8 +146,7 @@ video {
 
 
 @media only screen and (min-width: 321px) { 
-  .moviepc { display:block; }
-  .moviesp { display:none; }
+  .moviepc
 }/*デバイスの横幅が321px以上の場合*/
     
 
@@ -156,8 +155,7 @@ video {
 
 
 @media only screen and (max-width: 320px) {
-  .moviesp { display:block; }
-  .moviepc { display:none; }
+  .moviesp
 } /* デバイスの横幅が320px以下の場合 */
     	
 	
