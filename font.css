@@ -145,17 +145,4 @@ video {
 }
 
 
-@media only screen and (min-width: 321px) { 
-  .moviepc
-}/*デバイスの横幅が321px以上の場合*/
-    
 
-
-
-
-
-@media only screen and (max-width: 320px) {
-  .moviesp
-} /* デバイスの横幅が320px以下の場合 */
-    	
-	
