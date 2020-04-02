@@ -32,7 +32,10 @@ font-family: 'M PLUS Rounded 1c', sans-serif;
     padding: 10px;
     visibility: visible;
 }
-
+/*ラベルホバー時*/
+.lead.acd-label label:hover {
+    background :#ffe9a9;
+}
 
 
 
