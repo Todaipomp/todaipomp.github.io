@@ -17,7 +17,7 @@ font-family: 'M PLUS Rounded 1c', sans-serif;
     display: block;
     margin-bottom: 1px;
     padding: 10px;
-    cursor : pointer;	
+    cursor: pointer;	
 }
 
 .acd-content{
@@ -34,11 +34,7 @@ font-family: 'M PLUS Rounded 1c', sans-serif;
     padding: 10px;
     visibility: visible;
 }
-/*ラベルホバー時*/
-.lead.acd-label label:hover {
-	cursor : pointer;
-    background :#ffe9a9;
-}
+
 
 
 
