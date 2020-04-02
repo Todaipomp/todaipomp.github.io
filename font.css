@@ -34,6 +34,7 @@ font-family: 'M PLUS Rounded 1c', sans-serif;
 }
 /*ラベルホバー時*/
 .lead.acd-label label:hover {
+	cursor : pointer;
     background :#ffe9a9;
 }
 
