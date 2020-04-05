@@ -168,3 +168,10 @@ video {
   z-index: 2;
   width: 100%;
 }
+
+
+
+/*↓カラム間のガター幅が60px、カラムの左右の余白が30pxになる*/
+.o-3column .col-md-4 { padding: 0px;}
+/*カラムの左右の余白を15pxに戻す*/
+.o-3-column {margin: 0 30px;}
