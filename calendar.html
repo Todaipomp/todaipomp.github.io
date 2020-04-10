@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<meta charset='utf-8'>
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, user-scalable=0">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+<html>
+    <head>
+        <script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-database.js"></script>
+        <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@300&amp;display=swap" rel="stylesheet">
+        <script type="text/javascript" src="js/config.js"></script>
+        <script type="text/javascript" src="js/firebase.js"></script>
+        <link rel="stylesheet" href="/css/monthly.css">
+        <link rel="stylesheet" href="/css/main.css">
+        <script type="text/javascript" src="js/jquery.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+        <script type="text/javascript" src="js/monthly.js"></script>
+        <script type="text/javascript" src="js/schedule.js"></script>
+        <script type="text/javascript" src="js/function.js"></script>
+        <title>東大POMP 部室予約カレンダー</title>
+    </head>
+
+    <body>
+        <h2>東大POMP</h2>
+        <h3 >部室予約カレンダー</h3>
+        <input type="button" value="About" onclick="howtouse();" class="howtouse"/></div>
+        <br><br>
+        <div class="parent">
+            <div class = "select">
+            <input type="radio" name="modeselect" value="cal" id="cal" onclick="selectMode();" checked>
+            <label for="cal" class = "label">カレンダー</label>
+            <input type="radio" name="modeselect" value="res" id="res" onclick="selectMode();">
+            <label for="res" class = "label">予約</label>
+            </div>
+        </div>
+
+        <!-- calendar -->
+        <br>
+        <div style="width:100%; max-width:900px; display:inline-block;" id="calendar">
+            <p align="center"><span style="color:#008000;">個人練習</span>/<span style="color:#dc143c;">バンド練習</span>/<span style="color:#9400d3;">セッション</span>/<span style="color:#ff8c00;">その他</span></p>
+            <div class="monthly" id="mycalendar" ></div>
+            <br>
+        </div>
+
+        <!-- reservationform -->
+        <form name="form1" id="resform" action="">
+            <h3>表示名</h3>
+            <input type="text" id="dName" value="" placeholder="Display Name">
+            <h3>予約者名</h3>
+            <input type="text" id="pName" value="" placeholder="Your Name">
+            <h3>予約日</h3>
+            <div style="display:inline-block; width:250px;">
+                <input type="text" id="mytarget" value="" placeholder="Select Date" readonly>
+                <div class="monthly" id="mycalendar2"></div>
+            </div>
+            <h3>時間帯</h3>
+            <p>
+                開始：
+                <select name="sTime">
+                <option value="">選択してください</option>
+                <option value="09">09:00</option>
+                <option value="10">10:00</option>
+                <option value="11">11:00</option>
+                <option value="12">12:00</option>
+                <option value="13">13:00</option>
+                <option value="14">14:00</option>
+                <option value="15">15:00</option>
+                <option value="16">16:00</option>
+                <option value="17">17:00</option>
+                <option value="18">18:00</option>
+                <option value="19">19:00</option>
+                <option value="20">20:00</option>
+                </select>
+            </p>
+            <p>
+                終了：
+                <select name="eTime">
+                <option value="">選択してください</option>
+                <option value="10">10:00</option>
+                <option value="11">11:00</option>
+                <option value="12">12:00</option>
+                <option value="13">13:00</option>
+                <option value="14">14:00</option>
+                <option value="15">15:00</option>
+                <option value="16">16:00</option>
+                <option value="17">17:00</option>
+                <option value="18">18:00</option>
+                <option value="19">19:00</option>
+                <option value="20">20:00</option>
+                <option value="21">21:30</option>
+                </select>
+            </p>
+
+            <h3>内容</h3>
+                <select name="purpose">
+                    <option value="">選択してください</option>
+                    <option value="ind">個人練習</option>
+                    <option value="band">バンド練習</option>
+                    <option value="sess">セッション</option>
+                    <option value="other">その他</option>
+                </select>
+            <h3>削除用パスワード</h3>
+            <input type="text" id="password" value="" placeholder="Password">
+            <br><br>
+            <div id="errorbox"></div>
+            <input type="button" value="送信" onclick="sendData();"/>
+            <br><br><br>
+        </form>
+        <br><br>
+            <div id="modal-overlay_p"></div>'
+            <div id="passwordconf">
+                <h3>ユーザー名</h3>
+                <input type="text" id="username" value="" placeholder="Username">
+                <h3>パスワード</h3>
+                <input type="password" id="cpassword" value="" placeholder="Password">
+                <br><br>
+                <div id="errorbox3"></div>
+                <input type="button" value="ログイン" id="login"/>
+                <input type="button" value="キャンセル" id="clogin"/>
+                <br><br>
+            </div>
+            <div id="modal-content">
+                    <div id="nametag"></div>
+                    <div id="datetag"></div>
+                    <div id="timetag"></div>
+                    <p>削除しますか？</p>
+                    <input type="text" id="dpassword" value="" placeholder="Password">
+                    <br><br>
+                    <div id="errorbox2"></div>
+                    <input type="button" value="削除" onclick="deleteData();"/>
+                    <input type="button" value="キャンセル" id="modal-close"/>
+            </div>
+            <div id="howtopop">
+                <br>
+                <div class = "select">
+                    <input type="radio" name="contentselect" value="aboutres" id="aboutres" onclick="selectCont();"  checked>
+                    <label for="aboutres" class = "label">予約について</label>
+                    <input type="radio" name="contentselect" value="aboutroom" id="aboutroom" onclick="selectCont();" class="contentselect">
+                    <label for="aboutroom" class = "label">部室について</label>
+                </div>
+                    <br>
+                    <div id="aboutrescont">
+                        <h3 style="border-bottom: solid 1px #222;">練習登録のルール</h3>
+                        <h5 align="left">
+                        ・キャンプラ開館時間は通常平日が9時～21時半、休日が9時～19時半です。<br>
+                        ・練習の予約は1時間単位で行います。連続して2時間まで練習を予約することができます。<br>
+                        ・ただし、キャンプラ閉館直前の時間帯に練習を登録した場合最後の30分も練習できます。<br>
+                        ・一度登録した練習が終了するまで次の練習は登録できません。二重取りは厳禁です。<br>
+                        ・（新歓ライブバンドなど、ごく一部に例外あり。）<br>
+                        ・<span style="border-bottom: solid 1px #222;">個人練習の予約は予約日の1週間前から解禁します。<br></span>
+                        ・中止が決定された練習はすぐに削除してください。<br>
+                        ・同一の時間に練習が登録されているのを発見した場合、管理人に伝えてください。書き込み時間でみて後のほうの人に連絡を入れます。<br>
+                        </h5>
+                    </div>
+                    <div id="aboutroomcont" style="display: none;">
+                        <h3 style="border-bottom: solid 1px #222;">部室利用のルール</h3>
+                        <h4>- 部室のあけ方・閉め方 -</h4>
+                        <h5 align="left">
+                        1.入るとき<br>
+                        部屋に誰もいない場合:POMPカードをキャンプラ受付に出します。部室の鍵がもらえます。<br>
+                        交代する場合:その人にPOMPカードを預け、代わりに受付でカードを交換してもらってください。<br>
+
+                        2.開けます。鍵は入って左のフックにかけましょう。<br>
+
+                        3.出るとき<br>
+                        部室から誰もいなくなる場合:最後に出る人は必ず施錠して受付に鍵を返却し、POMPカードを受け取ってください。<br>
+                        部屋に人が残る場合:その人からカードを受け取り、受付で自分のカードと交換してください。<br>
+                        </h5>
+
+                        <h4>- その他部室利用に関する基本的なルール -</h4>
+                        <h5 align="left">
+                        ・練習登録されていない時間は自由に部室を使えます。<br>
+                        ・部室の機材は勝手に持ち出さないようにして下さい。<br>
+                        ・廊下でも音だしが可能です。ホーンの方などにオススメです。<br>
+                        ・ほかの人／バンドの練習が登録されていても荷物の出し入れ等で部室にいることは可能ですが、迷惑にならないようにしましょう。<br>
+                        ・ゴミは散らかさずに必ず捨てましょう。なるべく廊下の大きいゴミ箱へ。部室のゴミ箱がいっぱいになっているのに気づいたら廊下のゴミ箱に捨てましょう。<br>
+                        ・その日最後に部室を出る人は正しい手順で機材の電源を切ってから退室しましょう。<br>
+                        </h5>
+                    </div>
+                <br>
+                <input type="button" value="閉じる" id="hclose"/>
+                <br><br>
+            </div>
+            <script type="text/javascript">
+                　password();
+            </script>
+    </body>
+</html>
