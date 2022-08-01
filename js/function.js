@@ -92,13 +92,18 @@ function showData(){
     		target2 = document.getElementById("datetag");
     		target2.innerHTML = resdata.startdate;
     		var starttime = resdata.starttime + ":00";
-    		var endtime1 = resdata.endtime;
+    		/*
+			var endtime1 = resdata.endtime;
     		var endtime = "";
   				if (endtime1 == "21"){
     				endtime = "21:30"
 				}else{
     				endtime = endtime1 + ":00";
   				}
+			*/
+			// 以下合宿用です
+			var endtime = resdata.endtime + ":00";
+			// 以上合宿用です
     		target3 = document.getElementById("timetag");
     		target3.innerHTML = starttime + " - " + endtime;
 }
